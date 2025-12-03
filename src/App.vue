@@ -1,4 +1,5 @@
 <script setup>
+import Login from './components/Login.vue';
 import Navbar from './components/Navbar.vue'
 
 </script>
@@ -11,7 +12,11 @@ import Navbar from './components/Navbar.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    
   </main>
 </template>
 
+<style>
+@import url(src/assets/main.css);
+
+</style>
