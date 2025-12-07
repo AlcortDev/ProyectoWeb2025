@@ -1,8 +1,10 @@
 <script setup>
+import Register from './Register.vue';
 import Login from './Login.vue';
 import {ref} from 'vue';
 
 const ShowLogin = ref(false);
+const ShowRegister = ref(false);
 
 </script>
 
@@ -12,13 +14,14 @@ const ShowLogin = ref(false);
 
     <div class="container">
         <button class="login" @click="ShowLogin = true">Iniciar Sesión</button>
-        <button class="registrar">Registrate</button>
+        <button class="registrar" @click="ShowRegister = true">Registrate</button>
 
           <Login 
-        :mostrar ="ShowLogin"
-        @cerrar ="ShowLogin = false"
+        :mostrarLogin ="ShowLogin"
+        @cerrarLogin ="ShowLogin = false"
         />
 
+        <Register :mostrarRegister = "ShowRegister" @cerrarRegister = "ShowRegister = false" />
 
     </div>
 

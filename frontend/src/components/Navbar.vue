@@ -48,7 +48,7 @@ import LoginMenu from './LoginMenu.vue';
 
 button{
     text-decoration: none;
-    
+
 }
 </style>
 

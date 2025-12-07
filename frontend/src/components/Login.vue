@@ -1,21 +1,21 @@
 <script setup>
 
 defineProps({
-    mostrar: Boolean
+    mostrarLogin: Boolean
 })
 
 </script>
 
 <template>
-    <div class="overlay "  v-show="mostrar">
-        <div class ="login_container fade" :class="{ show: mostrar }">
+    <div class="overlay "  v-show="mostrarLogin">
+        <div class ="login_container" >
 
-            <button class="btn_close" @click="$emit('cerrar')">X</button>
+            <button class="btn_close" @click="$emit('cerrarLogin')">X</button>
             <div class="logo">Talleres.com</div>
             <form action="" class="formulario">
 
-                <label for="UsrName" id="labelUsrName">Nombre:</label>
-                <input type="text" id="UsrName" name="UsrName" placeholder="Ingresa tú nombre" >
+                <label for="UsrEmail" id="labelUsrEmail">Correo eléctronico</label>
+                <input type="text" id="UsrEmail" name="UsrEmail" placeholder="Ingresa tú correo eléctronico" >
 
                 <label for="UsrPass" id="labelUsrPass"> Contraseña:</label>
                 <input type="password" id="UsrPass" name="UsrPass" placeholder="Ingresa tu contraseña">
@@ -30,18 +30,10 @@ defineProps({
 
 <style scoped>
 
+@import url(src/assets/main.css);
 
 
-.fade {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.15s ease-out;
-}
 
-.fade.show {
-  opacity: 1;
-  transform: scale(1);
-}
 
 
 .overlay{
@@ -63,15 +55,11 @@ defineProps({
     }
 
 .login_container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         background-color:var(--color-fondo);
         width: 400px;
         max-width: 700px;
         height: 80vh;
-        padding: 0px 2rem;
+        padding: 2rem 2rem;
         border-radius: 10px;
         position:relative;
         display: flex;
@@ -123,13 +111,13 @@ defineProps({
         width: 100%;
     }
 
-#labelUsrName, #labelUsrPass{
+#labelUsrEmail, #labelUsrPass{
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: bold;
 
 }
 
-#UsrName, #UsrPass{
+#UsrEmail, #UsrPass{
     width: 100%;
     border: 1px solid var(--color-acento) ;
     padding: 5px 15px ;
